@@ -5,8 +5,7 @@
   "scripts": {
     "build": "EXTEND_ESLINT=true react-scripts build",
     "eject": "react-scripts eject",
-    "format:js": "yarn prettier 'src/**/*.{js,jsx,json,css,scss,md}'",
-    "prettier": "prettier --single-quote --write",
+    "format:js": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'",
     "start": "EXTEND_ESLINT=true react-scripts start",
     "test": "react-scripts test"
   },
@@ -21,7 +20,7 @@
       "git add"
     ],
     "src/**/*.{js,jsx,json,css,scss,md}": [
-      "yarn prettier",
+      "prettier --write",
       "git add"
     ]
   },
@@ -43,6 +42,8 @@
     "react-scripts": "3.1.1"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
