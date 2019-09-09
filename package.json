@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "build": "EXTEND_ESLINT=true react-scripts build",
+    "check:node": "check-node-version --package",
     "eject": "react-scripts eject",
     "format:js": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'",
+    "postinstall": "yarn run check:node",
     "start": "EXTEND_ESLINT=true react-scripts start",
     "test": "react-scripts test"
   },
@@ -42,11 +44,16 @@
     "react-scripts": "3.1.1"
   },
   "devDependencies": {
+    "check-node-version": "^4.0.1",
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "sort-package-json": "^1.22.1"
-  }
+  },
+  "engines": {
+    "node": ">= 10.13.0 < 11"
+  },
+  "engine-strict": true
 }
