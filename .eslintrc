@@ -1,0 +1,7 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "prefer-arrow-callback": "error",
+    "func-style": ["error", "expression", { "allowArrowFunctions": true }]
+  }
+}
