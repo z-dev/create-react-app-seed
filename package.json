@@ -2,16 +2,28 @@
   "name": "create-react-app-seed",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
-  },
   "scripts": {
-    "start": "EXTEND_ESLINT=true react-scripts start",
     "build": "EXTEND_ESLINT=true react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format:js": "yarn prettier 'src/**/*.{js,jsx,json,css,scss,md}'",
+    "prettier": "prettier --single-quote --write",
+    "start": "EXTEND_ESLINT=true react-scripts start",
+    "test": "react-scripts test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ],
+    "src/**/*.{js,jsx,json,css,scss,md}": [
+      "yarn prettier",
+      "git add"
+    ]
   },
   "browserslist": {
     "production": [
@@ -24,5 +36,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1"
+  },
+  "devDependencies": {
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "sort-package-json": "^1.22.1"
   }
 }
