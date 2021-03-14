@@ -6,7 +6,7 @@ module.exports = {
     config.resolve = {
       ...config.resolve,
       alias: { '@': path.resolve(__dirname, 'src') },
-    };
+    }
     return config
   },
 }
