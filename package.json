@@ -17,7 +17,9 @@
   "lint-staged": {
     "package.json": "sort-package-json",
     "src/**/*.{js,jsx,json,css,scss,md}": [
-      "prettier --write",
+      "prettier --write"
+    ],
+    "src/**/*.{js,jsx}": [
       "eslint --max-warnings=0"
     ]
   },
